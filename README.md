@@ -19,7 +19,7 @@ For this tutorial, you just need to be aware of:
 ## Build and Install the code
 Follow these steps to build and properly install your module: 
 ```
-$ cd tutotial_RFModule
+$ cd tutorial_yarp-basics
 $ mkdir build; cd build
 $ cmake ../
 $ make
@@ -65,6 +65,6 @@ In the yarp write terminal you are able to send command to the tutorial executab
 
 Available commands are:
 - any integer number: the application will reply with that number +1
-- 'enc': the application will reply with the encoder position of the first joint of the fake robot
-- 'quit': the application will quit
+- `enc`: the application will reply with the encoder position of the first joint of the fake robot
+- `quit`: the application will quit
 

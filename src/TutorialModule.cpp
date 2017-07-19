@@ -132,10 +132,13 @@ bool TutorialModule::updateModule()
         else if(val.asString() == "enc")
         {
             // Read encoder values:
-            double e;
+            double e = 0;
             if(encoders)
                 encoders->getEncoder(0, &e);
-            yInfo() << "joint 0 position is " << e;
+            b.clear();
+            b.addString("Joint 0 position is");
+            b.addInt(e);
+            commandPort.write(b);
         }
         else
             yError() << "Received unknown command " << val.toString();

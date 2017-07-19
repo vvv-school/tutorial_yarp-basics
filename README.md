@@ -1,6 +1,6 @@
 # YARP basics tutorial
 
-This tutorial shows some of the basic feature of YARP, usually required when dealing with a robot
+This tutorial shows some of the basic features of YARP, usually required when dealing with a robot :robot:
 
 ## Prerequisites
 

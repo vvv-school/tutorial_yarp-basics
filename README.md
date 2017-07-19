@@ -4,7 +4,7 @@ This tutorial shows some of the basic features of YARP, usually required when de
 
 ## Prerequisites
 
-For this assignment, you just need to be aware of:
+For this tutorial, you just need to be aware of:
 - What a class is in C++
 - Optionally run CMake
 

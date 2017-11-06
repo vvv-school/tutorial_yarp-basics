@@ -100,11 +100,6 @@ bool TutorialModule::updateModule()
     // watchdog message
     yInfo()<<"TutorialModule running happily...";
 
-    // Publish the image
-    yarp::sig::ImageOf<PixelBgr> &img = imagePort.prepare();
-    img.wrapIplImage(image);
-    imagePort.write();
-
     // Read input from user
     Bottle b;
     commandPort.read(b);
@@ -139,6 +134,13 @@ bool TutorialModule::updateModule()
             b.addString("Joint 0 position is");
             b.addInt(e);
             commandPort.write(b);
+        }
+        else if (val.asString() == "send_image")
+        {
+            // Publish the image
+            yarp::sig::ImageOf<PixelBgr> &img = imagePort.prepare();
+            img.wrapIplImage(image);
+            imagePort.write();
         }
         else
             yError() << "Received unknown command " << val.toString();

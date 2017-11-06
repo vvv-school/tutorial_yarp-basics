@@ -66,6 +66,7 @@ In the yarp write terminal you are able to send command to the tutorial executab
 Available commands are:
 - any integer number: the application will reply with that number +1
 - `enc`: the application will reply with the encoder position of the first joint of the fake robot
+- `send_image`: the application will send an image on port `/imagePort:o`
 - `quit`: the application will quit
 
 Once the tutorial executable has received the first command, you'll also see a dummy image being shown in the yarpview window.

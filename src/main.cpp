@@ -4,6 +4,8 @@
  * CopyPolicy: Released under the terms of the LGPLv2.1 or later, see LGPL.TXT
  */
 
+#include <cstdlib>
+
 #include <yarp/os/Network.h>
 #include <yarp/os/LogStream.h>
 #include <yarp/os/ResourceFinder.h>
@@ -20,7 +22,7 @@ int main(int argc, char * argv[])
     if(!yarp.checkNetwork())
     {
         yError() << "Cannot find yarp server";
-        return false;
+        return EXIT_FAILURE;
     }
 
     ResourceFinder rf;
@@ -32,7 +34,7 @@ int main(int argc, char * argv[])
     module.runModule(rf);
 
     yInfo()<<"Main returning...";
-    return 0;
+    return EXIT_SUCCESS;
 }
 
 

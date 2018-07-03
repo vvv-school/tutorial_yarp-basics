@@ -5,6 +5,7 @@
  */
 
 #include <map>
+#include <string>
 #include <TutorialModule.h>
 #include <yarp/os/LogStream.h>
 #include <opencv2/highgui/highgui.hpp>
@@ -45,7 +46,7 @@ bool TutorialModule::configure(yarp::os::ResourceFinder &rf)
 
     ResourceFinder r;
     r.setDefaultContext("tutorial_yarp-basics");
-    ConstString filePath = r.findFileByName("programmersLife.bmp");
+    std::string filePath = r.findFileByName("programmersLife.bmp");
 
     image = cvLoadImage(filePath.c_str(), CV_LOAD_IMAGE_COLOR);
     if(!image)

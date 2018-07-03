@@ -8,7 +8,6 @@
 #include <yarp/os/Port.h>
 #include <yarp/sig/Image.h>
 #include <yarp/os/RFModule.h>
-#include <yarp/os/ConstString.h>
 #include <yarp/os/BufferedPort.h>
 
 #include <yarp/dev/PolyDriver.h>
@@ -16,11 +15,9 @@
 
 #include <opencv2/opencv.hpp>
 
-
 class TutorialModule : public yarp::os::RFModule
 {
 public:
-
     TutorialModule();
     virtual ~TutorialModule();
 
@@ -33,13 +30,13 @@ public:
 private:
     IplImage* image;
     yarp::os::BufferedPort<yarp::sig::ImageOf<yarp::sig::PixelBgr> > imagePort;
-    yarp::os::ConstString portName;
-    yarp::os::Port commandPort;                    // command port
-    yarp::dev::PolyDriver   fakeRobot;
-    yarp::dev::PolyDriver   controlBoard;
+    std::string portName;
+    yarp::os::Port commandPort;     // command port
+    yarp::dev::PolyDriver fakeRobot;
+    yarp::dev::PolyDriver controlBoard;
 
     // Interfaces can only be used as a pointer, they cannot be instatiated
-    yarp::dev::IPositionControl2  *posControl;
-    yarp::dev::IEncoders          *encoders;
+    yarp::dev::IPositionControl *posControl;
+    yarp::dev::IEncoders        *encoders;
 };
 

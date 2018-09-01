@@ -5,7 +5,7 @@ cmake_minimum_required(VERSION 3.5)
 project(tutorial_yarp-basics)
 
 # mandatory use of these packages
-find_package(YARP REQUIRED)
+find_package(YARP 3.0.0 REQUIRED)
 find_package(ICUBcontrib REQUIRED)
 find_package(OpenCV REQUIRED)
 

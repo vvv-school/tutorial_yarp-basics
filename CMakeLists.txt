@@ -5,8 +5,8 @@ cmake_minimum_required(VERSION 3.5)
 project(tutorial_yarp-basics)
 
 # mandatory use of these packages
-find_package(YARP 3.0.0 REQUIRED)
 find_package(ICUBcontrib REQUIRED)
+find_package(YARP 3.1.100 REQUIRED OS dev sig cv)
 find_package(OpenCV REQUIRED)
 
 # extend the current search path used by cmake to load helpers
@@ -23,7 +23,7 @@ icubcontrib_set_default_prefix()
 include_directories(${CMAKE_SOURCE_DIR}/src)
 
 # buulding server
-add_executable(${PROJECT_NAME} src/main.cpp src/TutorialModule.cpp)
+add_executable(${PROJECT_NAME} src/main.cpp src/TutorialModule.h src/TutorialModule.cpp)
 target_link_libraries(${PROJECT_NAME} ${YARP_LIBRARIES} ${OpenCV_LIBRARIES})
 install(TARGETS ${PROJECT_NAME} DESTINATION bin)
 

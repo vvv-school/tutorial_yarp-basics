@@ -8,6 +8,7 @@
 #include <string>
 #include <TutorialModule.h>
 #include <yarp/os/LogStream.h>
+#include <yarp/cv/Cv.h>
 #include <opencv2/highgui/highgui.hpp>
 
 using namespace std;
@@ -48,8 +49,8 @@ bool TutorialModule::configure(yarp::os::ResourceFinder &rf)
     r.setDefaultContext("tutorial_yarp-basics");
     std::string filePath = r.findFileByName("programmersLife.bmp");
 
-    image = cvLoadImage(filePath.c_str(), CV_LOAD_IMAGE_COLOR);
-    if(!image)
+    image = cv::imread(filePath.c_str(), CV_LOAD_IMAGE_COLOR);
+    if(!image.data)
     {
         yError() << "Error";
         return false;
@@ -140,7 +141,7 @@ bool TutorialModule::updateModule()
         {
             // Publish the image
             yarp::sig::ImageOf<PixelBgr> &img = imagePort.prepare();
-            img.wrapIplImage(image);
+            img = yarp::cv::fromCvMat<PixelBgr>(image);
             imagePort.write();
         }
         else

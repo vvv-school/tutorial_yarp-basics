@@ -28,7 +28,7 @@ public:
     virtual bool interruptModule();
 
 private:
-    IplImage* image;
+    cv::Mat image;
     yarp::os::BufferedPort<yarp::sig::ImageOf<yarp::sig::PixelBgr> > imagePort;
     std::string portName;
     yarp::os::Port commandPort;     // command port

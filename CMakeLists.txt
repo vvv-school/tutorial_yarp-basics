@@ -12,7 +12,7 @@ find_package(OpenCV REQUIRED)
 # extend the current search path used by cmake to load helpers
 list(APPEND CMAKE_MODULE_PATH ${ICUBCONTRIB_MODULE_PATH})
 
-# helpers defining certain macros (e.g. "yarp_install")
+# helpers defining certain macros
 include(ICUBcontribHelpers)
 include(ICUBcontribOptions)
 

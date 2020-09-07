@@ -2,6 +2,8 @@
 
 This tutorial shows some of the basic features of YARP, usually required when dealing with a robot :robot:
 
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/vvv-school/tutorial_yarp-basics)
+
 ## Prerequisites
 
 For this tutorial, you just need to be aware of:

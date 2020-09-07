@@ -6,7 +6,7 @@ project(tutorial_yarp-basics)
 
 # mandatory use of these packages
 find_package(ICUBcontrib REQUIRED)
-find_package(YARP 3.1.100 REQUIRED OS dev sig cv)
+find_package(YARP 3.1.100 REQUIRED os dev sig cv)
 find_package(OpenCV REQUIRED)
 
 # extend the current search path used by cmake to load helpers

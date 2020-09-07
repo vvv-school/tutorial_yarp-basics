@@ -1,12 +1,12 @@
 # requires minimum cmake version
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.12)
 
 # produce the cmake var PROJECT_NAME
 project(tutorial_yarp-basics)
 
 # mandatory use of these packages
 find_package(ICUBcontrib REQUIRED)
-find_package(YARP 3.1.100 REQUIRED os dev sig cv)
+find_package(YARP 3.4.0 REQUIRED os dev sig cv)
 find_package(OpenCV REQUIRED)
 
 # extend the current search path used by cmake to load helpers

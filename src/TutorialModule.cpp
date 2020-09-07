@@ -49,7 +49,7 @@ bool TutorialModule::configure(yarp::os::ResourceFinder &rf)
     r.setDefaultContext("tutorial_yarp-basics");
     std::string filePath = r.findFileByName("programmersLife.bmp");
 
-    image = cv::imread(filePath.c_str(), CV_LOAD_IMAGE_COLOR);
+    image = cv::imread(filePath.c_str(), cv::IMREAD_COLOR);
     if(!image.data)
     {
         yError() << "Error";

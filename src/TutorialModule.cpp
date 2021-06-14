@@ -70,7 +70,7 @@ bool TutorialModule::configure(yarp::os::ResourceFinder &rf)
     // open a dummy fake robot
     yarp::os::Property fakeRobotConfig;
     fakeRobotConfig.put("device",    "controlboardwrapper2");
-    fakeRobotConfig.put("subdevice", "test_motor");
+    fakeRobotConfig.put("subdevice", "fakeMotionControl");
     fakeRobotConfig.put("name", "/fakeRobot/head");
     fakeRobot.open(fakeRobotConfig);
 

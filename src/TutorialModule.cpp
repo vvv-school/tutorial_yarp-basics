@@ -109,12 +109,12 @@ bool TutorialModule::updateModule()
     Value val = b.get(0);
 
     // If it is an integer, just add +1 and send it back (huge computation!!)
-    if(val.isInt())
+    if(val.isInt32())
     {
-        int c = b.get(0).asInt();
+        int c = b.get(0).asInt32();
         b.clear();
         b.addString("Answer is");
-        b.addInt(++c);
+        b.addInt32(++c);
         commandPort.write(b);
     }
 
@@ -134,7 +134,7 @@ bool TutorialModule::updateModule()
                 encoders->getEncoder(0, &e);
             b.clear();
             b.addString("Joint 0 position is");
-            b.addInt(e);
+            b.addInt32(e);
             commandPort.write(b);
         }
         else if (val.asString() == "send_image")

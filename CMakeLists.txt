@@ -24,7 +24,7 @@ include_directories(${CMAKE_SOURCE_DIR}/src)
 
 # buulding server
 add_executable(${PROJECT_NAME} src/main.cpp src/TutorialModule.h src/TutorialModule.cpp)
-target_link_libraries(${PROJECT_NAME} ${YARP_LIBRARIES} ${OpenCV_LIBRARIES})
+target_link_libraries(${PROJECT_NAME} ${YARP_LIBRARIES} ${OpenCV_LIBS})
 install(TARGETS ${PROJECT_NAME} DESTINATION bin)
 
 # generate ad-hoc project to perform "make uninstall"
